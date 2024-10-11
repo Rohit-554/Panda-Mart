@@ -25,9 +25,6 @@ Panda-Mart is a Flutter-based e-commerce application designed for seamless and d
 
 - Dynamic product listing based on categories.
 - Remote configuration using Firebase Remote Config for displaying pricing dynamically.
-- Push notifications using Firebase Cloud Messaging.
-- Dark theme support for a consistent UI.
-- Fully responsive and compatible with both Android and iOS devices.
 - Integration with Firebase Firestore for real-time data fetching and updates.
 
 ## **Installation**
