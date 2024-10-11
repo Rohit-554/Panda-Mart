@@ -1,6 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import '../../models/user.dart';
+import '../../domain/models/user.dart';
 import '../repository/auth_repository.dart';
 
 class FirebaseAuthService implements AuthRepository {
@@ -15,7 +16,7 @@ class FirebaseAuthService implements AuthRepository {
       );
       final user = userCredential.user;
       if (user != null) {
-        return UserEntity(id: user.uid, email: user.email!);
+        return UserEntity(id: user.uid, email: user.email!, name: user.displayName ?? "Unknown");
       }
     } on FirebaseAuthException catch (e) {
       rethrow;
@@ -34,7 +35,7 @@ class FirebaseAuthService implements AuthRepository {
       );
       final user = userCredential.user;
       if (user != null) {
-        return UserEntity(id: user.uid, email: user.email!);
+        return UserEntity(id: user.uid, email: user.email!, name: user.displayName ?? "Unknown");
       }
     } catch (e) {
       throw e.toString();
@@ -46,4 +47,7 @@ class FirebaseAuthService implements AuthRepository {
   Future<void> logout() async {
     await _firebaseAuth.signOut();
   }
+
+
+
 }

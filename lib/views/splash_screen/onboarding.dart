@@ -58,14 +58,14 @@ class _OnboardingState extends State<Onboarding> {
                 image: 'assets/lotie/sleeping_panda.json',
                 title: 'Panda Mart',
                 subTitle:
-                    'Welcome to a World of Limitless choices - Your perfect product awaits'),
+                    'We are here to make your shopping experience as easy as possible with ease'),
             OnBoardingPage(
                 width: width,
                 height: height,
                 image: 'assets/lotie/savings_graph.json',
                 title: 'Panda Mart',
                 subTitle:
-                    'Welcome to a World of Limitless choices - Your perfect product awaits'),
+                    'We offer the best prices and discounts on all products'),
           ],
         ),
         const OnBoardingSkip(),

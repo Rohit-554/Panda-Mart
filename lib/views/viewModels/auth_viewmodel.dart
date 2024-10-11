@@ -1,9 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import '../core/resources/data_state.dart';
-import '../models/user.dart';
-import '../views/usecases/use_cases.dart';
+import '../../core/resources/data_state.dart';
+import '../../domain/models/user.dart';
+import '../usecases/use_cases.dart';
 
 class AuthViewModel extends ChangeNotifier {
   final LoginUseCase _loginUseCase;
@@ -20,6 +21,9 @@ class AuthViewModel extends ChangeNotifier {
   String? _errorMessage;
   String? get errorMessage => _errorMessage;
 
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+
   Future<UserEntity?> login(String email, String password, BuildContext context) async {
     _isLoading = true;
     _errorMessage = null;
@@ -30,6 +34,8 @@ class AuthViewModel extends ChangeNotifier {
     if (result is DataSuccess) {
       _isSuccess = true;
       _isLoading = false;
+      await _addUserData(result.data!);
+      notifyListeners();
       return result.data;
     } else if (result is DataFailed) {
       _isLoading = false;
@@ -56,6 +62,7 @@ class AuthViewModel extends ChangeNotifier {
       _isSuccess = true;
       _isLoading = false;
       notifyListeners();
+      await _addUserData(result.data!);
       return result.data;
     } else if (result is DataFailed) {
       _isLoading = false;
@@ -75,4 +82,17 @@ class AuthViewModel extends ChangeNotifier {
     _errorMessage = message;
     notifyListeners();
   }
+
+  Future<void> _addUserData(UserEntity user) async {
+    final docRef = _firestore.collection('users').doc(user.id);
+    final docSnapshot = await docRef.get();
+
+    if (!docSnapshot.exists) {
+      await docRef.set({
+        'id' : user.id,
+        'name': user.name ?? 'Unknown',
+        'email': user.email,
+      });
+    }
+    }
 }

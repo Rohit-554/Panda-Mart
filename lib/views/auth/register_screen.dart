@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-import '../../models/user.dart';
-import '../../viewmodel/auth_viewmodel.dart';
+import '../../domain/models/user.dart';
+import '../viewModels/auth_viewmodel.dart';
 import '../widgets/ErrorCard.dart';
 import '../widgets/ThreeFieldForm.dart';
 

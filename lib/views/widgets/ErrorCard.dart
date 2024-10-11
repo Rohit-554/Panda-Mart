@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../viewmodel/auth_viewmodel.dart';
+import '../viewModels/auth_viewmodel.dart';
 
 class ErrorCard extends StatelessWidget {
   const ErrorCard({

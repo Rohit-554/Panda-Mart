@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:panda_mart/models/user.dart';
+import 'package:panda_mart/domain/models/user.dart';
 import 'package:panda_mart/views/widgets/RoundedButton.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/gestures.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'dart:ui';
-import '../../viewmodel/auth_viewmodel.dart';
+import '../viewModels/auth_viewmodel.dart';
 import '../widgets/ErrorCard.dart';
 import '../widgets/TwoFieldForm.dart';
 

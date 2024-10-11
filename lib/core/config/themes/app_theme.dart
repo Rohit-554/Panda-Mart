@@ -27,6 +27,6 @@ AppBarTheme appBarTheme() {
 }
 
 class AppColors {
-  static const Color themeColor = Color(0xff54a53c);
-  static const Color navButtonsColor = Color(0xff54a53c);
+  static const Color themeColor = Color(0xff0c1739);
+  static const Color navButtonsColor = Color(0xff0c1739);
 }
