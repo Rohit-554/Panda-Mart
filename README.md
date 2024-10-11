@@ -134,7 +134,6 @@ We welcome contributions from the community! To contribute:
 
 - Follow the Clean Architecture structure: Separate code into `domain`, `data`, and `presentation` layers.
 - Make sure all new code is well-documented.
-- Write tests for any new feature or module you add.
 
 ---
 Made with love by Rohit ♥
