@@ -136,9 +136,5 @@ We welcome contributions from the community! To contribute:
 - Make sure all new code is well-documented.
 - Write tests for any new feature or module you add.
 
-## **License**
-
-Panda-Mart is licensed under the MIT License. See `LICENSE` for more details.
-
 ---
 Made with love by Rohit ♥
