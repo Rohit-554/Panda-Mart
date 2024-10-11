@@ -39,7 +39,7 @@ Panda-Mart is a Flutter-based e-commerce application designed for seamless and d
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/panda-mart.git
+   git clone https://github.com/Rohit-554/Panda-Mart.git
    ```
 2. **Navigate to the Project Directory**:
    ```bash
